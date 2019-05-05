@@ -154,8 +154,8 @@ public class AddBook extends JDialog {
 				ArrayList<ArrayList<Object>> result1 = m
 						.execQuery("SELECT * FROM `COPY` WHERE DOCID = '" + txtBookID.getText() + "';");
 				Integer r = result1.size() + 1;
-				int afr3 = m.execUpdate("INSERT INTO COPY (DOCID, COPYNO, LIBID, POSITION) " + "VALUES (" + id + ","
-						+ r + ",'" + lid + "','" + txtPos.getText() + "')");
+				int afr3 = m.execUpdate("INSERT INTO COPY (DOCID, COPYNO, LIBID, POSITION) " + "VALUES (" + id + "," + r
+						+ ",'" + lid + "','" + txtPos.getText() + "')");
 
 				JOptionPane.showMessageDialog(null, "1 book inserted into COPY Table");
 			}

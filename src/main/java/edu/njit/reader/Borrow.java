@@ -27,21 +27,6 @@ public class Borrow extends JDialog {
 	private JTable tableDocBorrowResult;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			DBManager m = DBManager.getInstance();
-			m.connect();
-			Borrow dialog = new Borrow("1");
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * Create the dialog.
 	 */
 	public Borrow(String cardNumber) {

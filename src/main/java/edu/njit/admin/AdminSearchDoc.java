@@ -12,7 +12,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import edu.njit.db.DBManager;
-import edu.njit.reader.SearchDoc;
 
 public class AdminSearchDoc extends JDialog {
 
@@ -20,19 +19,9 @@ public class AdminSearchDoc extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private final JPanel contentPanel = new JPanel();
 	private JTable tableDocStatusResult;
-
-	public static void main(String[] args) {
-		try {
-			SearchDoc dialog = new SearchDoc();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	public AdminSearchDoc(String docid, String copyno, String lid) {
 

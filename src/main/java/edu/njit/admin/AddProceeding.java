@@ -15,6 +15,11 @@ import edu.njit.db.DBManager;
 
 public class AddProceeding extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public AddProceeding() {
 
 		getContentPane().setBackground(Color.WHITE);

@@ -11,7 +11,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import edu.njit.db.DBManager;
-import edu.njit.reader.Borrow;
 
 public class TopPopular extends JDialog {
 
@@ -21,21 +20,6 @@ public class TopPopular extends JDialog {
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTable tableTopP;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			DBManager m = DBManager.getInstance();
-			m.connect();
-			Borrow dialog = new Borrow("1");
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Create the dialog.

@@ -19,16 +19,6 @@ public class SearchDoc extends JDialog {
 	private JTextField txtCopyNo;
 	private JTextField txtLID;
 
-	public static void main(String[] args) {
-		try {
-			SearchDoc dialog = new SearchDoc();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	public SearchDoc() {
 
 		getContentPane().setBackground(Color.WHITE);

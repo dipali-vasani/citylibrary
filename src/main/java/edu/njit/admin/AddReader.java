@@ -20,16 +20,6 @@ public class AddReader extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public static void main(String[] args) {
-		try {
-			AddReader dialog = new AddReader();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	public AddReader() {
 
 		getContentPane().setBackground(Color.WHITE);
@@ -110,9 +100,9 @@ public class AddReader extends JDialog {
 
 				}
 
-				int afr = m.execUpdate("INSERT INTO READER (READERID, RTYPE, RNAME, ADDRESS) " + "VALUES ('" + id + "','"
-						+ txtReaderType.getText() + "','" + txtReaderName.getText() + "','" + txtReaderAdd.getText()
-						+ ",')");
+				int afr = m.execUpdate("INSERT INTO READER (READERID, RTYPE, RNAME, ADDRESS) " + "VALUES ('" + id
+						+ "','" + txtReaderType.getText() + "','" + txtReaderName.getText() + "','"
+						+ txtReaderAdd.getText() + ",')");
 				if (afr > 0) {
 					JOptionPane.showMessageDialog(null, "1 reader inserted to database");
 				}

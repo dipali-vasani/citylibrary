@@ -27,21 +27,6 @@ public class Return extends JDialog {
 	private JLabel lblNewLabel;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			DBManager m = DBManager.getInstance();
-			m.connect();
-			Return dialog = new Return("1");
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * Create the dialog.
 	 */
 	public Return(String cardNumber) {

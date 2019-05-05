@@ -23,6 +23,10 @@ import edu.njit.db.DBManager;
 
 public class SearchResult extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	public String searchKeyword;
 	public int searchType;
@@ -31,20 +35,6 @@ public class SearchResult extends JDialog {
 	public static final int SEARCH_TYPE_TITLE = 2;
 	public static final int SEARCH_TYPE_PUBLISHER = 3;
 	private JTable tableDocSearchResult;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			DBManager.getInstance().connect();
-			SearchResult dialog = new SearchResult("4", SEARCH_TYPE_ID, "1");
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Create the dialog.

@@ -19,20 +19,12 @@ import edu.njit.db.DBManager;
 
 public class Reserve extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTable tableDocReserveResult;
-
-	public static void main(String[] args) {
-		try {
-			DBManager m = DBManager.getInstance();
-			m.connect();
-			Reserve dialog = new Reserve("1");
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Create the dialog.

@@ -22,6 +22,7 @@ public class AverageFine extends JDialog {
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTable tableAvFn;
+
 	/**
 	 * Create the dialog.
 	 * 
@@ -49,8 +50,7 @@ public class AverageFine extends JDialog {
 		for (int i = 0; i < result1.size(); i++) {
 			avg = 0;
 			avfn = 0;
-			result2 = m.execQuery("SELECT BDTIME, RDTIME FROM `BORROWS` WHERE READERID ='"
-					+ array[i][0] + "' ;");
+			result2 = m.execQuery("SELECT BDTIME, RDTIME FROM `BORROWS` WHERE READERID ='" + array[i][0] + "' ;");
 			for (int j = 0; j < result2.size(); j++) {
 				ArrayList<Object> row1 = result2.get(j);
 				Timestamp a = (Timestamp) row1.get(0);
@@ -78,7 +78,7 @@ public class AverageFine extends JDialog {
 			}
 
 		}
-		
+
 		DefaultTableModel tm = new DefaultTableModel(array, columnNames);
 
 		setBounds(100, 100, 1358, 610);

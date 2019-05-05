@@ -15,6 +15,11 @@ import edu.njit.db.DBManager;
 
 public class AddJournal extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public AddJournal() {
 
 		getContentPane().setBackground(Color.WHITE);

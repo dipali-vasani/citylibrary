@@ -11,7 +11,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import edu.njit.db.DBManager;
-import edu.njit.reader.Borrow;
 
 public class TopBooks extends JDialog {
 	/**
@@ -22,28 +21,13 @@ public class TopBooks extends JDialog {
 	private JTable tableTopB;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			DBManager m = DBManager.getInstance();
-			m.connect();
-			Borrow dialog = new Borrow("1");
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
 	 * Create the dialog.
 	 */
 	public TopBooks() {
 
 		DBManager m = DBManager.getInstance();
 
-		String[] columnNames = { "DOCID", "LIBID", "BRANCHNAME","No. of BORROWS" };
+		String[] columnNames = { "DOCID", "LIBID", "BRANCHNAME", "No. of BORROWS" };
 		ArrayList<ArrayList<Object>> result = new ArrayList<ArrayList<Object>>();
 
 		result = m.execQuery(
