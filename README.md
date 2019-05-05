@@ -1,10 +1,10 @@
 # citylibrary
 
 Step 1:
-Run create.sql
+Run src/main/resources/db/create.sql
 
 Step 2:
-Run data.sql
+Run src/main/resources/db/data.sql
 
 Step 3:
 Run MainWindow.java
