@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
 import edu.njit.admin.Admin;
@@ -85,8 +84,7 @@ public class MainWindow {
 
 		frameCityLibrary.getContentPane().add(ComponentUtils.getJLabel(38, 36, 300, 16, "Reader Functions"));
 
-		JSeparator separator = ComponentUtils.getJSeparator(6, 119, 438, 16);
-		frameCityLibrary.getContentPane().add(separator);
+		frameCityLibrary.getContentPane().add(ComponentUtils.getJSeparator(6, 119, 438, 16));
 
 		frameCityLibrary.getContentPane().add(ComponentUtils.getJLabel(38, 151, 300, 16, "Administrative Functions"));
 

@@ -92,7 +92,7 @@ public class Return extends JDialog {
 				int index = list1.get(rowIndex);
 
 				long time = System.currentTimeMillis();
-				java.sql.Timestamp timestamp = new java.sql.Timestamp(time);
+				Timestamp timestamp = new Timestamp(time);
 				Timestamp a = (Timestamp) array[index][5];
 				long diff = time - a.getTime();
 				double diff1 = (double) diff / 86400000;

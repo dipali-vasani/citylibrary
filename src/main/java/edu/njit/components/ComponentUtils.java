@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
@@ -70,5 +71,11 @@ public class ComponentUtils {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPanel.setLayout(null);
 		return contentPanel;
+	}
+
+	public static JRadioButton getJRadioButton(int x, int y, int width, int height, String label) {
+		JRadioButton jRadioButton = new JRadioButton(label);
+		jRadioButton.setBounds(x, y, width, height);
+		return jRadioButton;
 	}
 }

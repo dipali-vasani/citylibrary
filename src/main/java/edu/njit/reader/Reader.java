@@ -46,17 +46,14 @@ public class Reader extends JDialog {
 		getContentPane().add(ComponentUtils.getJLabel(16, 6, 400, 16, "READER ID: " + cardNumber + ""));
 
 		// Radio Button
-		JRadioButton radioButtonDocId = new JRadioButton("Decoument Id");
+		JRadioButton radioButtonDocId = ComponentUtils.getJRadioButton(39, 129, 124, 23, "Decoument Id");
 		radioButtonDocId.setSelected(true);
-		radioButtonDocId.setBounds(39, 129, 124, 23);
 		getContentPane().add(radioButtonDocId);
 
-		radioButtonTitle = new JRadioButton("Title");
-		radioButtonTitle.setBounds(195, 129, 68, 23);
+		radioButtonTitle = ComponentUtils.getJRadioButton(195, 129, 68, 23, "Title");
 		getContentPane().add(radioButtonTitle);
 
-		radioButtonPublisher = new JRadioButton("Publisher");
-		radioButtonPublisher.setBounds(287, 129, 95, 23);
+		radioButtonPublisher = ComponentUtils.getJRadioButton(287, 129, 95, 23, "Publisher");
 		getContentPane().add(radioButtonPublisher);
 
 		ButtonGroup bG = new ButtonGroup();
