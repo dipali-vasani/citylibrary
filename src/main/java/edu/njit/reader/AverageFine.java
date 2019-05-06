@@ -1,6 +1,5 @@
 package edu.njit.reader;
 
-import java.awt.Color;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -9,9 +8,9 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class AverageFine extends JDialog {
@@ -20,7 +19,7 @@ public class AverageFine extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final JPanel contentPanel = new JPanel();
+	private final JPanel contentPanel = ComponentUtils.getJPanel(0, 0, 1352, 582);
 	private JTable tableAverageFine;
 
 	/**
@@ -83,14 +82,9 @@ public class AverageFine extends JDialog {
 
 		setBounds(100, 100, 1358, 610);
 		getContentPane().setLayout(null);
-		contentPanel.setBounds(0, 0, 1352, 582);
-		contentPanel.setBackground(Color.WHITE);
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
-		contentPanel.setLayout(null);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(6, 51, 1308, 480);
+		JScrollPane scrollPane = ComponentUtils.getJScrollPane(6, 51, 1308, 480);
 		contentPanel.add(scrollPane);
 
 		tableAverageFine = new JTable();

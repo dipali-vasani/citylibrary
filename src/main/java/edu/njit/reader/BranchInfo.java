@@ -1,15 +1,14 @@
 package edu.njit.reader;
 
-import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class BranchInfo extends JDialog {
@@ -18,7 +17,7 @@ public class BranchInfo extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final JPanel contentPanel = new JPanel();
+	private final JPanel contentPanel = ComponentUtils.getJPanel(0, 0, 1352, 582);
 	private JTable tableBranchInfo;
 
 	/**
@@ -43,14 +42,9 @@ public class BranchInfo extends JDialog {
 
 		setBounds(100, 100, 1358, 610);
 		getContentPane().setLayout(null);
-		contentPanel.setBounds(0, 0, 1352, 582);
-		contentPanel.setBackground(Color.WHITE);
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
-		contentPanel.setLayout(null);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(26, 51, 1308, 480);
+		JScrollPane scrollPane = ComponentUtils.getJScrollPane(26, 51, 1308, 480);
 		contentPanel.add(scrollPane);
 
 		tableBranchInfo = new JTable();

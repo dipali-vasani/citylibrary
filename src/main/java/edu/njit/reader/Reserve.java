@@ -1,20 +1,18 @@
 package edu.njit.reader;
 
-import java.awt.Color;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
 
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class Reserve extends JDialog {
@@ -23,7 +21,7 @@ public class Reserve extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final JPanel contentPanel = new JPanel();
+	private final JPanel contentPanel = ComponentUtils.getJPanel(0, 0, 1047, 582);
 	private JTable tableDocReserveResult;
 
 	/**
@@ -87,23 +85,16 @@ public class Reserve extends JDialog {
 
 		setBounds(100, 100, 1053, 610);
 		getContentPane().setLayout(null);
-		contentPanel.setBounds(0, 0, 1047, 582);
-		contentPanel.setBackground(Color.WHITE);
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
-		contentPanel.setLayout(null);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(42, 72, 966, 391);
+		JScrollPane scrollPane = ComponentUtils.getJScrollPane(42, 72, 966, 391);
 		contentPanel.add(scrollPane);
 
 		tableDocReserveResult = new JTable();
 		scrollPane.setViewportView(tableDocReserveResult);
 		tableDocReserveResult.setModel(tm);
 
-		JLabel lblNewLabel = new JLabel("Reserved Books:");
-		lblNewLabel.setBounds(43, 24, 200, 36);
-		contentPanel.add(lblNewLabel);
+		contentPanel.add(ComponentUtils.getJLabel(43, 24, 200, 36, "Reserved Books:"));
 
 	}
 }

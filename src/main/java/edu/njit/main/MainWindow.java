@@ -1,8 +1,6 @@
 package edu.njit.main;
 
-import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -15,6 +13,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
 import edu.njit.admin.Admin;
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 import edu.njit.reader.Reader;
 
@@ -57,26 +56,15 @@ public class MainWindow {
 			System.exit(1);
 		}
 
-		frameCityLibrary = new JFrame();
-		frameCityLibrary.setFont(new Font("Helvetica", Font.PLAIN, 16));
-		frameCityLibrary.setTitle("THE CITY LIBRARY");
-		frameCityLibrary.getContentPane().setBackground(Color.WHITE);
-		frameCityLibrary.getContentPane().setForeground(Color.WHITE);
-		frameCityLibrary.setBounds(100, 100, 450, 300);
-		frameCityLibrary.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frameCityLibrary.getContentPane().setLayout(null);
+		frameCityLibrary = ComponentUtils.getJFrame(100, 100, 450, 300, "THE CITY LIBRARY");
 
-		JLabel lblCardNumber = new JLabel("Card No");
-		lblCardNumber.setBounds(38, 69, 90, 16);
-		lblCardNumber.setFont(new Font("Helvetica", Font.PLAIN, 16));
+		JLabel lblCardNumber = ComponentUtils.getJLabel(38, 69, 90, 16, "Card No");
 		frameCityLibrary.getContentPane().add(lblCardNumber);
 
-		cardNumber = new JTextField();
-		cardNumber.setBounds(125, 64, 130, 26);
+		cardNumber = ComponentUtils.getJTextField(125, 64, 130, 26, 10);
 		frameCityLibrary.getContentPane().add(cardNumber);
-		cardNumber.setColumns(10);
 
-		JButton btnReaderLogin = new JButton("Login");
+		JButton btnReaderLogin = ComponentUtils.getJButton(280, 64, 149, 29, "Login");
 		btnReaderLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (cardNumber.getText().length() <= 0) {
@@ -95,48 +83,30 @@ public class MainWindow {
 				}
 			}
 		});
-		btnReaderLogin.setBounds(280, 64, 149, 29);
 		frameCityLibrary.getContentPane().add(btnReaderLogin);
 
-		JLabel lblCityLibrary = new JLabel("Reader Functions");
-		lblCityLibrary.setFont(new Font("Helvetica", Font.PLAIN, 16));
-		lblCityLibrary.setForeground(Color.BLACK);
-		lblCityLibrary.setBackground(Color.GRAY);
-		lblCityLibrary.setBounds(38, 36, 300, 16);
+		JLabel lblCityLibrary = ComponentUtils.getJLabel(38, 36, 300, 16, "Reader Functions");
 		frameCityLibrary.getContentPane().add(lblCityLibrary);
 
-		JSeparator separator = new JSeparator();
-		separator.setBounds(6, 119, 438, 16);
+		JSeparator separator = ComponentUtils.getJSeparator(6, 119, 438, 16);
 		frameCityLibrary.getContentPane().add(separator);
 
-		JLabel lblCityLibrary1 = new JLabel("Administrative Functions");
-		lblCityLibrary1.setFont(new Font("Helvetica", Font.PLAIN, 16));
-		lblCityLibrary1.setForeground(Color.BLACK);
-		lblCityLibrary1.setBackground(Color.GRAY);
-		lblCityLibrary1.setBounds(38, 151, 300, 16);
+		JLabel lblCityLibrary1 = ComponentUtils.getJLabel(38, 151, 300, 16, "Administrative Functions");
 		frameCityLibrary.getContentPane().add(lblCityLibrary1);
 
-		JLabel lblAdminID = new JLabel("ID");
-		lblAdminID.setBounds(38, 179, 90, 16);
-		lblAdminID.setFont(new Font("Helvetica", Font.PLAIN, 16));
+		JLabel lblAdminID = ComponentUtils.getJLabel(38, 179, 90, 16, "ID");
 		frameCityLibrary.getContentPane().add(lblAdminID);
 
-		JTextField txtAdminID = new JTextField();
-		txtAdminID.setBounds(125, 174, 130, 26);
+		JTextField txtAdminID = ComponentUtils.getJTextField(125, 174, 130, 26, 10);
 		frameCityLibrary.getContentPane().add(txtAdminID);
-		txtAdminID.setColumns(10);
 
-		JLabel lblAdminPwd = new JLabel("Password");
-		lblAdminPwd.setBounds(38, 217, 90, 16);
-		lblAdminPwd.setFont(new Font("Helvetica", Font.PLAIN, 16));
+		JLabel lblAdminPwd = ComponentUtils.getJLabel(38, 217, 90, 16, "Password");
 		frameCityLibrary.getContentPane().add(lblAdminPwd);
 
-		JTextField txtAdminPwd = new JTextField();
-		txtAdminPwd.setBounds(125, 207, 130, 26);
+		JTextField txtAdminPwd = ComponentUtils.getJTextField(125, 207, 130, 26, 10);
 		frameCityLibrary.getContentPane().add(txtAdminPwd);
-		txtAdminPwd.setColumns(10);
 
-		JButton btnAdminLogin = new JButton("Login");
+		JButton btnAdminLogin = ComponentUtils.getJButton(280, 207, 149, 29, "Login");
 		btnAdminLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (txtAdminID.getText().length() <= 0) {
@@ -162,7 +132,6 @@ public class MainWindow {
 			}
 
 		});
-		btnAdminLogin.setBounds(280, 207, 149, 29);
 		frameCityLibrary.getContentPane().add(btnAdminLogin);
 	}
 

@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class AddDocument extends JDialog {
@@ -27,11 +28,10 @@ public class AddDocument extends JDialog {
 		setBounds(100, 100, 500, 550);
 		getContentPane().setLayout(null);
 
-		JLabel lblAddReader = new JLabel("Add Document to Database");
-		lblAddReader.setBounds(38, 14, 200, 31);
+		JLabel lblAddReader = ComponentUtils.getJLabel(38, 14, 200, 31, "Add Document to Database");
 		getContentPane().add(lblAddReader);
 
-		JButton btnAddBook = new JButton("Add Book");
+		JButton btnAddBook = ComponentUtils.getJButton(38, 64, 200, 29, "Add Book");
 		btnAddBook.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddBook dialog = new AddBook();
@@ -39,10 +39,9 @@ public class AddDocument extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnAddBook.setBounds(38, 64, 200, 29);
 		getContentPane().add(btnAddBook);
 
-		JButton btnAddJournal = new JButton("Add Journal");
+		JButton btnAddJournal = ComponentUtils.getJButton(38, 114, 200, 29, "Add Journal");
 		btnAddJournal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddJournal dialog = new AddJournal();
@@ -50,10 +49,9 @@ public class AddDocument extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnAddJournal.setBounds(38, 114, 200, 29);
 		getContentPane().add(btnAddJournal);
 
-		JButton btnAddProc = new JButton("Add Proceedings");
+		JButton btnAddProc = ComponentUtils.getJButton(38, 164, 200, 29, "Add Proceedings");
 		btnAddProc.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddProceeding dialog = new AddProceeding();
@@ -61,9 +59,6 @@ public class AddDocument extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnAddProc.setBounds(38, 164, 200, 29);
 		getContentPane().add(btnAddProc);
-
 	}
-
 }

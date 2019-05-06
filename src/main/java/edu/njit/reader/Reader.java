@@ -1,7 +1,6 @@
 package edu.njit.reader;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,9 +10,9 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class Reader extends JDialog {
@@ -37,22 +36,16 @@ public class Reader extends JDialog {
 		DBManager m = DBManager.getInstance();
 		m.connect();
 
-		setBounds(100, 100, 780, 329);
+		setBounds(100, 100, 780, 500);
 		getContentPane().setLayout(null);
 
-		txtDocSearch = new JTextField();
-		txtDocSearch.setBounds(28, 91, 379, 26);
+		txtDocSearch = ComponentUtils.getJTextField(28, 91, 379, 26, 10);
 		getContentPane().add(txtDocSearch);
-		txtDocSearch.setColumns(10);
 
-		JLabel lblNewLabel = new JLabel("The City Library");
-		lblNewLabel.setFont(new Font("Helvetica", Font.PLAIN, 16));
-		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setBounds(226, 30, 150, 50);
+		JLabel lblNewLabel = ComponentUtils.getJLabel(226, 30, 150, 50, "The City Library");
 		getContentPane().add(lblNewLabel);
 
-		JLabel lblReadId = new JLabel("READER ID: " + cardNumber + "");
-		lblReadId.setBounds(16, 6, 136, 16);
+		JLabel lblReadId = ComponentUtils.getJLabel(16, 6, 400, 16, "READER ID: " + cardNumber + "");
 		getContentPane().add(lblReadId);
 
 		// Radio Button
@@ -75,7 +68,7 @@ public class Reader extends JDialog {
 		bG.add(radioButtonPublisher);
 
 		// Search Button
-		JButton btnSearch = new JButton("Search");
+		JButton btnSearch = ComponentUtils.getJButton(425, 91, 117, 29, "Search");
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -99,39 +92,27 @@ public class Reader extends JDialog {
 			}
 		});
 
-		btnSearch.setBounds(425, 91, 117, 29);
 		getContentPane().add(btnSearch);
 
-		JSeparator separator = new JSeparator();
-		separator.setBounds(46, 197, 1, 12);
-		getContentPane().add(separator);
+		getContentPane().add(ComponentUtils.getJSeparator(46, 197, 1, 12));
 
-		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(6, 197, 536, -60);
-		getContentPane().add(separator_1);
+		getContentPane().add(ComponentUtils.getJSeparator(6, 197, 536, -60));
 
-		JSeparator separator_2 = new JSeparator();
-		separator_2.setBounds(0, 223, 572, 16);
-		getContentPane().add(separator_2);
+		getContentPane().add(ComponentUtils.getJSeparator(0, 223, 572, 16));
 
-		JLabel lblReaderProfile = new JLabel("Reader Profile");
-		lblReaderProfile.setBounds(28, 251, 86, 16);
+		JLabel lblReaderProfile = ComponentUtils.getJLabel(28, 251, 150, 16, "Reader Profile");
 		getContentPane().add(lblReaderProfile);
 
-		JButton btnNewButtonBorrow = new JButton("Borrowed Books");
-		btnNewButtonBorrow.setBounds(127, 246, 136, 29);
+		JButton btnNewButtonBorrow = ComponentUtils.getJButton(28, 286, 150, 29, "Borrowed Books");
 		getContentPane().add(btnNewButtonBorrow);
 
-		JButton btnNewButtonReserve = new JButton("Reserved Books");
-		btnNewButtonReserve.setBounds(277, 246, 130, 29);
+		JButton btnNewButtonReserve = ComponentUtils.getJButton(208, 286, 150, 29, "Reserved Books");
 		getContentPane().add(btnNewButtonReserve);
 
-		JButton btnNewButtonReturn = new JButton("Return");
-		btnNewButtonReturn.setBounds(428, 246, 114, 29);
+		JButton btnNewButtonReturn = ComponentUtils.getJButton(388, 286, 114, 29, "Return");
 		getContentPane().add(btnNewButtonReturn);
 
-		JButton btnNewButtonFine = new JButton("Fine");
-		btnNewButtonFine.setBounds(579, 246, 114, 29);
+		JButton btnNewButtonFine = ComponentUtils.getJButton(532, 286, 114, 29, "Fine");
 		getContentPane().add(btnNewButtonFine);
 
 		btnNewButtonReturn.addActionListener(new ActionListener() {

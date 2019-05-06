@@ -1,7 +1,6 @@
 package edu.njit.admin;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
@@ -10,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 import edu.njit.reader.AverageFine;
 import edu.njit.reader.BranchInfo;
@@ -32,20 +32,16 @@ public class Admin extends JDialog {
 		DBManager m = DBManager.getInstance();
 		m.connect();
 
-		setBounds(100, 100, 742, 386);
+		setBounds(100, 100, 742, 500);
 		getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("The City Library");
-		lblNewLabel.setFont(new Font("Helvetica", Font.PLAIN, 16));
-		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setBounds(202, 24, 181, 50);
+		JLabel lblNewLabel = ComponentUtils.getJLabel(202, 24, 181, 50, "The City Library");
 		getContentPane().add(lblNewLabel);
 
-		JLabel lblAdminId = new JLabel("ADMIN");
-		lblAdminId.setBounds(16, 6, 61, 16);
+		JLabel lblAdminId = ComponentUtils.getJLabel(16, 6, 61, 16, "ADMIN");
 		getContentPane().add(lblAdminId);
 
-		JButton btnAddReader = new JButton("Add Reader");
+		JButton btnAddReader = ComponentUtils.getJButton(38, 64, 150, 29, "Add Reader");
 		btnAddReader.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddReader dialog = new AddReader();
@@ -53,10 +49,9 @@ public class Admin extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnAddReader.setBounds(38, 64, 150, 29);
 		getContentPane().add(btnAddReader);
 
-		JButton btnAddDocument = new JButton("Add Document");
+		JButton btnAddDocument = ComponentUtils.getJButton(200, 64, 150, 29, "Add Document");
 		btnAddDocument.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddDocument dialog = new AddDocument();
@@ -64,10 +59,9 @@ public class Admin extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnAddDocument.setBounds(200, 64, 150, 29);
 		getContentPane().add(btnAddDocument);
 
-		JButton btnSearchDoc = new JButton("Search Document");
+		JButton btnSearchDoc = ComponentUtils.getJButton(38, 124, 150, 29, "Search Doc");
 		btnSearchDoc.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SearchDoc dialog = new SearchDoc();
@@ -75,10 +69,9 @@ public class Admin extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnSearchDoc.setBounds(38, 124, 150, 29);
 		getContentPane().add(btnSearchDoc);
 
-		JButton btnBranchInfo = new JButton("Branch Info");
+		JButton btnBranchInfo = ComponentUtils.getJButton(200, 124, 150, 29, "Branch Info");
 		btnBranchInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				BranchInfo dialog = new BranchInfo();
@@ -86,10 +79,9 @@ public class Admin extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnBranchInfo.setBounds(200, 124, 150, 29);
 		getContentPane().add(btnBranchInfo);
 
-		JButton btnTopR = new JButton("Top 10 most frequent borrowers in a branch");
+		JButton btnTopR = ComponentUtils.getJButton(38, 184, 400, 29, "Top 10 most frequent borrowers in a branch");
 		btnTopR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TopReaders dialog = new TopReaders();
@@ -97,10 +89,9 @@ public class Admin extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnTopR.setBounds(38, 184, 400, 29);
 		getContentPane().add(btnTopR);
 
-		JButton btnTopB = new JButton("Top 10 most borrowed books in a branch");
+		JButton btnTopB = ComponentUtils.getJButton(38, 244, 400, 29, "Top 10 most borrowed books in a branch");
 		btnTopB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TopBooks dialog = new TopBooks();
@@ -108,10 +99,9 @@ public class Admin extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnTopB.setBounds(38, 244, 400, 29);
 		getContentPane().add(btnTopB);
 
-		JButton btnTopP = new JButton("10 most popular books of the year");
+		JButton btnTopP = ComponentUtils.getJButton(38, 304, 400, 29, "10 most popular books of the year");
 		btnTopP.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TopPopular dialog = new TopPopular();
@@ -119,10 +109,9 @@ public class Admin extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnTopP.setBounds(38, 304, 400, 29);
 		getContentPane().add(btnTopP);
 
-		JButton btnAvFn = new JButton("Average Fine per reader");
+		JButton btnAvFn = ComponentUtils.getJButton(38, 364, 400, 29, "Average Fine per reader");
 		btnAvFn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AverageFine dialog = null;
@@ -135,7 +124,6 @@ public class Admin extends JDialog {
 				dialog.setVisible(true);
 			}
 		});
-		btnAvFn.setBounds(38, 364, 400, 29);
 		getContentPane().add(btnAvFn);
 	}
 }

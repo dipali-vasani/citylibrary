@@ -1,7 +1,6 @@
 package edu.njit.reader;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Timestamp;
@@ -16,9 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class SearchResult extends JDialog {
@@ -27,7 +26,7 @@ public class SearchResult extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final JPanel contentPanel = new JPanel();
+	private final JPanel contentPanel = ComponentUtils.getJPanel(0, 0, 900, 582);
 	public String searchKeyword;
 	public int searchType;
 
@@ -46,14 +45,9 @@ public class SearchResult extends JDialog {
 
 		setBounds(100, 100, 1000, 610);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(Color.WHITE);
-		contentPanel.setForeground(Color.WHITE);
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		contentPanel.setLayout(null);
 
-		JLabel lblDocresult = new JLabel("Document search result:");
-		lblDocresult.setBounds(23, 33, 853, 31);
+		JLabel lblDocresult = ComponentUtils.getJLabel(23, 33, 853, 31, "Document search result:");
 		contentPanel.add(lblDocresult);
 
 		String[] columnNames = { "DOCID", "TITLE", "PDATE", "PUBLISHERID", "PUBNAME", "COPYNO", "LIBID", "POSITION",
@@ -87,15 +81,14 @@ public class SearchResult extends JDialog {
 
 		DefaultTableModel tm = new DefaultTableModel(searchArray, columnNames);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(23, 76, 959, 397);
+		JScrollPane scrollPane = ComponentUtils.getJScrollPane(23, 76, 959, 397);
 		contentPanel.add(scrollPane);
 
 		tableDocSearchResult = new JTable();
 		scrollPane.setViewportView(tableDocSearchResult);
 		tableDocSearchResult.setModel(tm);
 
-		JButton btnReserve = new JButton("RESERVE");
+		JButton btnReserve = ComponentUtils.getJButton(865, 503, 117, 29, "RESERVE");
 		btnReserve.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int rowIndex = tableDocSearchResult.getSelectedRow();
@@ -413,10 +406,9 @@ public class SearchResult extends JDialog {
 				}
 			}
 		});
-		btnReserve.setBounds(865, 503, 117, 29);
 		contentPanel.add(btnReserve);
 
-		JButton btnBorrow = new JButton("CHECK OUT");
+		JButton btnBorrow = ComponentUtils.getJButton(707, 503, 137, 29, "CHECKOUT");
 		btnBorrow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int rowIndex = tableDocSearchResult.getSelectedRow();
@@ -735,9 +727,6 @@ public class SearchResult extends JDialog {
 				}
 			}
 		});
-		btnBorrow.setBounds(707, 503, 117, 29);
 		contentPanel.add(btnBorrow);
-
 	}
-
 }

@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class AddReader extends JDialog {
@@ -30,47 +31,34 @@ public class AddReader extends JDialog {
 		setBounds(100, 100, 1000, 550);
 		getContentPane().setLayout(null);
 
-		JLabel lblAddReader = new JLabel("Add Reader to Database");
-		lblAddReader.setBounds(74, 78, 200, 31);
+		JLabel lblAddReader = ComponentUtils.getJLabel(74, 78, 200, 31, "Add Reader to Database");
 		getContentPane().add(lblAddReader);
 
-		JLabel lblReaderID = new JLabel("ID");
-		lblReaderID.setBounds(38, 149, 90, 16);
+		JLabel lblReaderID = ComponentUtils.getJLabel(38, 149, 90, 16, "ID");
 		getContentPane().add(lblReaderID);
 
-		JTextField txtReaderID = new JTextField();
-		txtReaderID.setBounds(125, 149, 130, 26);
+		JTextField txtReaderID = ComponentUtils.getJTextField(125, 149, 130, 26, 10);
 		getContentPane().add(txtReaderID);
-		txtReaderID.setColumns(10);
 
-		JLabel lblReaderType = new JLabel("TYPE");
-		lblReaderType.setBounds(38, 179, 90, 16);
+		JLabel lblReaderType = ComponentUtils.getJLabel(38, 179, 90, 16, "TYPE");
 		getContentPane().add(lblReaderType);
 
-		JTextField txtReaderType = new JTextField();
-		txtReaderType.setBounds(125, 179, 130, 26);
+		JTextField txtReaderType = ComponentUtils.getJTextField(125, 179, 130, 26, 10);
 		getContentPane().add(txtReaderType);
-		txtReaderType.setColumns(10);
 
-		JLabel lblReaderName = new JLabel("NAME");
-		lblReaderName.setBounds(38, 229, 90, 16);
+		JLabel lblReaderName = ComponentUtils.getJLabel(38, 229, 90, 16, "NAME");
 		getContentPane().add(lblReaderName);
 
-		JTextField txtReaderName = new JTextField();
-		txtReaderName.setBounds(125, 229, 130, 26);
+		JTextField txtReaderName = ComponentUtils.getJTextField(125, 229, 130, 26, 10);
 		getContentPane().add(txtReaderName);
-		txtReaderName.setColumns(10);
 
-		JLabel lblReaderAdd = new JLabel("ADDRESS");
-		lblReaderAdd.setBounds(38, 269, 90, 16);
+		JLabel lblReaderAdd = ComponentUtils.getJLabel(38, 269, 90, 16, "ADDRESS");
 		getContentPane().add(lblReaderAdd);
 
-		JTextField txtReaderAdd = new JTextField();
-		txtReaderAdd.setBounds(125, 269, 130, 26);
+		JTextField txtReaderAdd = ComponentUtils.getJTextField(125, 269, 130, 26, 20);
 		getContentPane().add(txtReaderAdd);
-		txtReaderAdd.setColumns(20);
 
-		JButton btnAddReader = new JButton("Add Reader");
+		JButton btnAddReader = ComponentUtils.getJButton(280, 179, 149, 29, "Add Reader");
 		btnAddReader.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (txtReaderID.getText().length() <= 0) {
@@ -109,7 +97,6 @@ public class AddReader extends JDialog {
 			}
 
 		});
-		btnAddReader.setBounds(280, 179, 149, 29);
 		getContentPane().add(btnAddReader);
 	}
 

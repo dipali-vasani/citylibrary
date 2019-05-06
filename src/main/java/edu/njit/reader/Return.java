@@ -1,6 +1,5 @@
 package edu.njit.reader;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Timestamp;
@@ -9,22 +8,20 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class Return extends JDialog {
 
-	private final JPanel contentPanel = new JPanel();
+	private final JPanel contentPanel = ComponentUtils.getJPanel(0, 0, 1352, 582);
 	private JTable tableDocBorrowResult;
 	private JButton btnReturn;
-	private JLabel lblNewLabel;
 
 	/**
 	 * Create the dialog.
@@ -71,14 +68,9 @@ public class Return extends JDialog {
 
 		setBounds(100, 100, 1358, 610);
 		getContentPane().setLayout(null);
-		contentPanel.setBounds(0, 0, 1352, 582);
-		contentPanel.setBackground(Color.WHITE);
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
-		contentPanel.setLayout(null);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(29, 38, 1245, 480);
+		JScrollPane scrollPane = ComponentUtils.getJScrollPane(29, 38, 1245, 480);
 		contentPanel.add(scrollPane);
 
 		tableDocBorrowResult = new JTable();
@@ -86,7 +78,7 @@ public class Return extends JDialog {
 		tableDocBorrowResult.setModel(tm);
 
 		// Return a Book
-		btnReturn = new JButton("Return");
+		btnReturn = ComponentUtils.getJButton(1180, 529, 117, 29, "Return");
 
 		btnReturn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -125,12 +117,8 @@ public class Return extends JDialog {
 
 			}
 		});
-		btnReturn.setBounds(1180, 529, 117, 29);
 		contentPanel.add(btnReturn);
-
-		lblNewLabel = new JLabel("Borrowed Books:");
-		lblNewLabel.setBounds(29, 10, 117, 16);
-		contentPanel.add(lblNewLabel);
+		contentPanel.add(ComponentUtils.getJLabel(29, 10, 117, 16, "Borrowed Books:"));
 	}
 
 }

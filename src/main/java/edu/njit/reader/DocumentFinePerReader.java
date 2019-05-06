@@ -1,7 +1,5 @@
 package edu.njit.reader;
 
-import java.awt.Color;
-import java.awt.Label;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -9,13 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
 
 public class DocumentFinePerReader extends JDialog {
@@ -24,7 +23,7 @@ public class DocumentFinePerReader extends JDialog {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final JPanel contentPanel = new JPanel();
+	private final JPanel contentPanel = ComponentUtils.getJPanel(0, 0, 1352, 582);
 	private JTable tableDocumentFinePerReader;
 
 	/**
@@ -32,7 +31,7 @@ public class DocumentFinePerReader extends JDialog {
 	 * 
 	 * @throws ParseException
 	 */
-	public DocumentFinePerReader(String cardNumber){
+	public DocumentFinePerReader(String cardNumber) {
 		setTitle("The City Library");
 
 		DBManager m = DBManager.getInstance();
@@ -85,22 +84,16 @@ public class DocumentFinePerReader extends JDialog {
 
 		setBounds(100, 100, 1358, 610);
 		getContentPane().setLayout(null);
-		contentPanel.setBounds(0, 0, 1352, 582);
-		contentPanel.setBackground(Color.WHITE);
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
-		contentPanel.setLayout(null);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(16, 51, 1240, 444);
+		JScrollPane scrollPane = ComponentUtils.getJScrollPane(16, 51, 1240, 444);
 		contentPanel.add(scrollPane);
 
 		tableDocumentFinePerReader = new JTable();
 		scrollPane.setViewportView(tableDocumentFinePerReader);
 		tableDocumentFinePerReader.setModel(tm);
 
-		Label label = new Label("Borrowed Books:");
-		label.setBounds(6, 10, 187, 35);
+		JLabel label = ComponentUtils.getJLabel(6, 10, 187, 35, "Borrowed Books:");
 		contentPanel.add(label);
 	}
 
