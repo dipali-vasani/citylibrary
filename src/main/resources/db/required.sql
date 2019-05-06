@@ -1,0 +1,22 @@
+SELECT * FROM BORROWS;
+
+
+update BRANCH set LNAME='HARRISON', LLOCATION='HARRISON' where LIBID='L1012';
+
+
+SELECT * FROM copy;
+SELECT * FROM author;
+SELECT * FROM document;
+SELECT * FROM proceedings;
+
+SELECT * FROM branch;
+
+SELECT * FROM publisher;
+SELECT * FROM chief_editor;
+
+SELECT * FROM journal_issue;
+SELECT * FROM journal_volume;
+
+UPDATE BORROWS SET BDTIME='2019-03-02 17:26:12' WHERE BORNUMBER=68;
+
+

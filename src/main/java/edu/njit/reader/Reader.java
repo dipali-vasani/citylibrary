@@ -46,7 +46,7 @@ public class Reader extends JDialog {
 		getContentPane().add(ComponentUtils.getJLabel(16, 6, 400, 16, "READER ID: " + cardNumber + ""));
 
 		// Radio Button
-		JRadioButton radioButtonDocId = ComponentUtils.getJRadioButton(39, 129, 124, 23, "Decoument Id");
+		JRadioButton radioButtonDocId = ComponentUtils.getJRadioButton(39, 129, 124, 23, "Document Id");
 		radioButtonDocId.setSelected(true);
 		getContentPane().add(radioButtonDocId);
 

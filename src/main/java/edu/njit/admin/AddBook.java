@@ -1,5 +1,7 @@
 package edu.njit.admin;
 
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,25 +48,35 @@ public class AddBook extends JDialog {
 
 		JTextField txtTitle = ComponentUtils.getJTextField(125, 229, 130, 26, 10);
 		getContentPane().add(txtTitle);
+		
+		getContentPane().add(ComponentUtils.getJLabel(38, 269, 90, 16, "AUTHOR"));
 
-		getContentPane().add(ComponentUtils.getJLabel(38, 269, 90, 16, "PDATE"));
+		JTextField authorname = ComponentUtils.getJTextField(125, 269, 130, 26, 10);
+		getContentPane().add(authorname);
+		
+		getContentPane().add(ComponentUtils.getJLabel(38, 309, 90, 16, "AUTHORID"));
 
-		JTextField txtPDate = ComponentUtils.getJTextField(125, 269, 130, 26, 10);
+		JTextField authorid = ComponentUtils.getJTextField(125, 309, 130, 26, 10);
+		getContentPane().add(authorid);
+
+		getContentPane().add(ComponentUtils.getJLabel(38, 359, 90, 16, "PDATE"));
+
+		JTextField txtPDate = ComponentUtils.getJTextField(125, 359, 130, 26, 10);
 		getContentPane().add(txtPDate);
 
-		getContentPane().add(ComponentUtils.getJLabel(38, 309, 90, 16, "PID"));
+		getContentPane().add(ComponentUtils.getJLabel(38, 409, 90, 16, "PID"));
 
-		JTextField txtPID = ComponentUtils.getJTextField(125, 309, 130, 26, 10);
+		JTextField txtPID = ComponentUtils.getJTextField(125, 409, 130, 26, 10);
 		getContentPane().add(txtPID);
 
-		getContentPane().add(ComponentUtils.getJLabel(38, 359, 90, 16, "BRANCHNO"));
+		getContentPane().add(ComponentUtils.getJLabel(38, 459, 90, 16, "BRANCHNO"));
 
-		JTextField txtLID = ComponentUtils.getJTextField(125, 359, 130, 26, 10);
+		JTextField txtLID = ComponentUtils.getJTextField(125, 459, 130, 26, 10);
 		getContentPane().add(txtLID);
 
-		getContentPane().add(ComponentUtils.getJLabel(38, 409, 90, 16, "POSITION"));
+		getContentPane().add(ComponentUtils.getJLabel(38, 519, 90, 16, "POSITION"));
 
-		JTextField txtPos = ComponentUtils.getJTextField(125, 409, 130, 26, 10);
+		JTextField txtPos = ComponentUtils.getJTextField(125, 519, 130, 26, 10);
 		getContentPane().add(txtPos);
 
 		JButton btnAddBook = ComponentUtils.getJButton(280, 179, 149, 29, "Add Book");
@@ -78,6 +90,14 @@ public class AddBook extends JDialog {
 					JOptionPane.showMessageDialog(null, "Please specify ISBN");
 					return;
 				}
+				if (authorname.getText().length() <= 0) {
+					JOptionPane.showMessageDialog(null, "Please specify Author");
+					return;
+				}
+				if (authorid.getText().length() <= 0) {
+					JOptionPane.showMessageDialog(null, "Please specify AuthorID");
+					return;
+				}
 				if (txtTitle.getText().length() <= 0) {
 					JOptionPane.showMessageDialog(null, "Please specify name");
 					return;
@@ -86,10 +106,13 @@ public class AddBook extends JDialog {
 					JOptionPane.showMessageDialog(null, "Please specify Branch");
 					return;
 				}
+				
 
 				String id = txtBookID.getText();
 				String lid = txtLID.getText();
 				String pid = txtPID.getText();
+				//String pdate1= txtPDate.getText() ;  
+			    //Date pdate = new SimpleDateFormat("dd/MM/yyyy").parse(pdate1);  
 				// String ty = txtReaderType.getText();
 				// String nm = txtReaderName.getText();
 				// String ad = txtReaderAdd.getText();
@@ -101,6 +124,7 @@ public class AddBook extends JDialog {
 					JOptionPane.showMessageDialog(null, "No BRANCH  WITH THIS ID. CANNOT INSERT");
 
 				}
+				
 				ArrayList<ArrayList<Object>> resultp = m
 						.execQuery("SELECT * FROM `PUBLISHER` WHERE PUBLISHERID = '" + txtPID.getText() + "';");
 				if (resultp.size() == 0) {
@@ -108,6 +132,16 @@ public class AddBook extends JDialog {
 					JOptionPane.showMessageDialog(null, "No PUBLISHER  WITH THIS ID. CANNOT INSERT");
 
 				}
+				
+				ArrayList<ArrayList<Object>> resultau = m
+						.execQuery("SELECT * FROM `AUTHOR` WHERE AUTHORID = '" + authorid.getText() + "';");
+				if (resultau.size() == 0) {
+
+					int afr5 = m.execUpdate("INSERT INTO AUTHOR (AUTHORID, ANAME) " + "VALUES ('"
+							+ authorid.getText() + "','" + authorname.getText() + "')");
+
+				}
+				
 				ArrayList<ArrayList<Object>> result = m
 						.execQuery("SELECT * FROM `DOCUMENT` WHERE DOCID = '" + txtBookID.getText() + "';");
 				if (result.size() == 0) {
@@ -116,11 +150,11 @@ public class AddBook extends JDialog {
 							+ id + "','" + txtTitle.getText() + "','" + txtPDate.getText() + "','" + pid + "')");
 					int afr2 = m.execUpdate(
 							"INSERT INTO BOOK (DOCID, ISBN) " + "VALUES ('" + id + "','" + txtISBN.getText() + "')");
-
-					JOptionPane.showMessageDialog(null, "A new book inserted to document table andbook table.");
-
+					int afr4 = m.execUpdate(
+							"INSERT INTO WRITES (DOCID, AUTHORID) " + "VALUES ('" + id + "','" + authorid.getText() + "')");
+					JOptionPane.showMessageDialog(null, "A new book inserted to Document table and Book table.");
 				}
-
+				
 				ArrayList<ArrayList<Object>> result1 = m
 						.execQuery("SELECT * FROM `COPY` WHERE DOCID = '" + txtBookID.getText() + "';");
 				Integer r = result1.size() + 1;

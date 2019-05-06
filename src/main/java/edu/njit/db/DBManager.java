@@ -25,7 +25,7 @@ public class DBManager {
 		// Define variables
 		String jdbc_url = "jdbc:mysql://localhost:3306/city_library?useSSL=false";
 		String username = "root";
-		String password = "root1234";
+		String password = "Qwerty_123";
 
 		try {
 			// Attempt to connect
