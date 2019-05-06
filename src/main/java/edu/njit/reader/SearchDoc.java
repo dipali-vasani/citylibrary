@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -30,23 +29,19 @@ public class SearchDoc extends JDialog {
 		setBounds(100, 100, 500, 550);
 		getContentPane().setLayout(null);
 
-		JLabel lblSearchDoc = ComponentUtils.getJLabel(74, 78, 300, 31, "Search Status of Documents");
-		getContentPane().add(lblSearchDoc);
+		getContentPane().add(ComponentUtils.getJLabel(74, 78, 300, 31, "Search Status of Documents"));
 
-		JLabel lblDocID = ComponentUtils.getJLabel(38, 149, 90, 16, "DOCID");
-		getContentPane().add(lblDocID);
+		getContentPane().add(ComponentUtils.getJLabel(38, 149, 90, 16, "DOCID"));
 
 		txtDocID = ComponentUtils.getJTextField(125, 149, 130, 26, 10);
 		getContentPane().add(txtDocID);
 
-		JLabel lblCopyNo = ComponentUtils.getJLabel(38, 179, 90, 16, "COPY NO.");
-		getContentPane().add(lblCopyNo);
+		getContentPane().add(ComponentUtils.getJLabel(38, 179, 90, 16, "COPY NO."));
 
 		txtCopyNo = ComponentUtils.getJTextField(125, 179, 130, 26, 10);
 		getContentPane().add(txtCopyNo);
 
-		JLabel lblLID = ComponentUtils.getJLabel(38, 229, 90, 16, "LIBRARYID");
-		getContentPane().add(lblLID);
+		getContentPane().add(ComponentUtils.getJLabel(38, 229, 90, 16, "LIBRARYID"));
 
 		txtLID = ComponentUtils.getJTextField(125, 229, 130, 26, 10);
 		getContentPane().add(txtLID);

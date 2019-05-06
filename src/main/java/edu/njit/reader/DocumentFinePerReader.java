@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -93,8 +92,7 @@ public class DocumentFinePerReader extends JDialog {
 		scrollPane.setViewportView(tableDocumentFinePerReader);
 		tableDocumentFinePerReader.setModel(tm);
 
-		JLabel label = ComponentUtils.getJLabel(6, 10, 187, 35, "Borrowed Books:");
-		contentPanel.add(label);
+		contentPanel.add(ComponentUtils.getJLabel(6, 10, 187, 35, "Borrowed Books:"));
 	}
 
 }

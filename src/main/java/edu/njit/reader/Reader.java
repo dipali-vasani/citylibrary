@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -42,11 +41,9 @@ public class Reader extends JDialog {
 		txtDocSearch = ComponentUtils.getJTextField(28, 91, 379, 26, 10);
 		getContentPane().add(txtDocSearch);
 
-		JLabel lblNewLabel = ComponentUtils.getJLabel(226, 30, 150, 50, "The City Library");
-		getContentPane().add(lblNewLabel);
+		getContentPane().add(ComponentUtils.getJLabel(226, 30, 150, 50, "The City Library"));
 
-		JLabel lblReadId = ComponentUtils.getJLabel(16, 6, 400, 16, "READER ID: " + cardNumber + "");
-		getContentPane().add(lblReadId);
+		getContentPane().add(ComponentUtils.getJLabel(16, 6, 400, 16, "READER ID: " + cardNumber + ""));
 
 		// Radio Button
 		JRadioButton radioButtonDocId = new JRadioButton("Decoument Id");
@@ -100,8 +97,7 @@ public class Reader extends JDialog {
 
 		getContentPane().add(ComponentUtils.getJSeparator(0, 223, 572, 16));
 
-		JLabel lblReaderProfile = ComponentUtils.getJLabel(28, 251, 150, 16, "Reader Profile");
-		getContentPane().add(lblReaderProfile);
+		getContentPane().add(ComponentUtils.getJLabel(28, 251, 150, 16, "Reader Profile"));
 
 		JButton btnNewButtonBorrow = ComponentUtils.getJButton(28, 286, 150, 29, "Borrowed Books");
 		getContentPane().add(btnNewButtonBorrow);

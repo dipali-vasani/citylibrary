@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
@@ -58,8 +57,7 @@ public class MainWindow {
 
 		frameCityLibrary = ComponentUtils.getJFrame(100, 100, 450, 300, "THE CITY LIBRARY");
 
-		JLabel lblCardNumber = ComponentUtils.getJLabel(38, 69, 90, 16, "Card No");
-		frameCityLibrary.getContentPane().add(lblCardNumber);
+		frameCityLibrary.getContentPane().add(ComponentUtils.getJLabel(38, 69, 90, 16, "Card No"));
 
 		cardNumber = ComponentUtils.getJTextField(125, 64, 130, 26, 10);
 		frameCityLibrary.getContentPane().add(cardNumber);
@@ -85,23 +83,19 @@ public class MainWindow {
 		});
 		frameCityLibrary.getContentPane().add(btnReaderLogin);
 
-		JLabel lblCityLibrary = ComponentUtils.getJLabel(38, 36, 300, 16, "Reader Functions");
-		frameCityLibrary.getContentPane().add(lblCityLibrary);
+		frameCityLibrary.getContentPane().add(ComponentUtils.getJLabel(38, 36, 300, 16, "Reader Functions"));
 
 		JSeparator separator = ComponentUtils.getJSeparator(6, 119, 438, 16);
 		frameCityLibrary.getContentPane().add(separator);
 
-		JLabel lblCityLibrary1 = ComponentUtils.getJLabel(38, 151, 300, 16, "Administrative Functions");
-		frameCityLibrary.getContentPane().add(lblCityLibrary1);
+		frameCityLibrary.getContentPane().add(ComponentUtils.getJLabel(38, 151, 300, 16, "Administrative Functions"));
 
-		JLabel lblAdminID = ComponentUtils.getJLabel(38, 179, 90, 16, "ID");
-		frameCityLibrary.getContentPane().add(lblAdminID);
+		frameCityLibrary.getContentPane().add(ComponentUtils.getJLabel(38, 179, 90, 16, "ID"));
 
 		JTextField txtAdminID = ComponentUtils.getJTextField(125, 174, 130, 26, 10);
 		frameCityLibrary.getContentPane().add(txtAdminID);
 
-		JLabel lblAdminPwd = ComponentUtils.getJLabel(38, 217, 90, 16, "Password");
-		frameCityLibrary.getContentPane().add(lblAdminPwd);
+		frameCityLibrary.getContentPane().add(ComponentUtils.getJLabel(38, 217, 90, 16, "Password"));
 
 		JTextField txtAdminPwd = ComponentUtils.getJTextField(125, 207, 130, 26, 10);
 		frameCityLibrary.getContentPane().add(txtAdminPwd);

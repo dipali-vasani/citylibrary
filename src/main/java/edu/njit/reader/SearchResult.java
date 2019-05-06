@@ -10,7 +10,6 @@ import java.util.TimeZone;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -47,8 +46,7 @@ public class SearchResult extends JDialog {
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 
-		JLabel lblDocresult = ComponentUtils.getJLabel(23, 33, 853, 31, "Document search result:");
-		contentPanel.add(lblDocresult);
+		contentPanel.add(ComponentUtils.getJLabel(23, 33, 853, 31, "Document search result:"));
 
 		String[] columnNames = { "DOCID", "TITLE", "PDATE", "PUBLISHERID", "PUBNAME", "COPYNO", "LIBID", "POSITION",
 				"LIBNAME", "LIBADDRESS" };

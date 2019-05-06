@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -31,65 +30,54 @@ public class AddJournal extends JDialog {
 		setBounds(100, 100, 500, 1000);
 		getContentPane().setLayout(null);
 
-		JLabel lblAddJounal = ComponentUtils.getJLabel(74, 78, 200, 31, "Add Journal to Database");
-		getContentPane().add(lblAddJounal);
+		getContentPane().add(ComponentUtils.getJLabel(74, 78, 200, 31, "Add Journal to Database"));
 
-		JLabel lblJournalID = ComponentUtils.getJLabel(38, 149, 90, 16, "ID");
-		getContentPane().add(lblJournalID);
+		getContentPane().add(ComponentUtils.getJLabel(38, 149, 90, 16, "ID"));
 
 		JTextField txtJournalID = ComponentUtils.getJTextField(125, 149, 130, 26, 10);
 		getContentPane().add(txtJournalID);
 
-		JLabel lblTitle = ComponentUtils.getJLabel(38, 229, 90, 16, "NAME");
-		getContentPane().add(lblTitle);
+		getContentPane().add(ComponentUtils.getJLabel(38, 229, 90, 16, "NAME"));
 
 		JTextField txtTitle = ComponentUtils.getJTextField(125, 229, 130, 26, 10);
 		getContentPane().add(txtTitle);
 
-		JLabel lblVolume = ComponentUtils.getJLabel(38, 269, 90, 16, "VOLUME");
-		getContentPane().add(lblVolume);
+		getContentPane().add(ComponentUtils.getJLabel(38, 269, 90, 16, "VOLUME"));
 
 		JTextField txtVolume = ComponentUtils.getJTextField(125, 269, 130, 26, 10);
 		getContentPane().add(txtVolume);
 
-		JLabel lblIssue = ComponentUtils.getJLabel(38, 309, 90, 16, "ISSUE No.");
-		getContentPane().add(lblIssue);
+		getContentPane().add(ComponentUtils.getJLabel(38, 309, 90, 16, "ISSUE No."));
 
 		JTextField txtIssue = ComponentUtils.getJTextField(125, 309, 130, 26, 10);
 		getContentPane().add(txtIssue);
 
-		JLabel lblScope = ComponentUtils.getJLabel(38, 369, 90, 16, "SCOPE");
-		getContentPane().add(lblScope);
+		getContentPane().add(ComponentUtils.getJLabel(38, 369, 90, 16, "SCOPE"));
 
 		JTextField txtScope = ComponentUtils.getJTextField(125, 369, 130, 26, 10);
 		getContentPane().add(txtScope);
 
-		JLabel lblPDate = ComponentUtils.getJLabel(38, 409, 90, 16, "PDATE");
-		getContentPane().add(lblPDate);
+		getContentPane().add(ComponentUtils.getJLabel(38, 409, 90, 16, "PDATE"));
 
 		JTextField txtPDate = ComponentUtils.getJTextField(125, 409, 130, 26, 10);
 		getContentPane().add(txtPDate);
 
-		JLabel lblPID = ComponentUtils.getJLabel(38, 469, 90, 16, "PID");
-		getContentPane().add(lblPID);
+		getContentPane().add(ComponentUtils.getJLabel(38, 469, 90, 16, "PID"));
 
 		JTextField txtPID = ComponentUtils.getJTextField(125, 469, 130, 26, 10);
 		getContentPane().add(txtPID);
 
-		JLabel lblEID = ComponentUtils.getJLabel(38, 509, 90, 16, "EDITORID");
-		getContentPane().add(lblEID);
+		getContentPane().add(ComponentUtils.getJLabel(38, 509, 90, 16, "EDITORID"));
 
 		JTextField txtEID = ComponentUtils.getJTextField(125, 509, 130, 26, 10);
 		getContentPane().add(txtEID);
 
-		JLabel lblLID = ComponentUtils.getJLabel(38, 569, 90, 16, "BRANCHNO");
-		getContentPane().add(lblLID);
+		getContentPane().add(ComponentUtils.getJLabel(38, 569, 90, 16, "BRANCHNO"));
 
 		JTextField txtLID = ComponentUtils.getJTextField(125, 569, 130, 26, 10);
 		getContentPane().add(txtLID);
 
-		JLabel lblPos = ComponentUtils.getJLabel(38, 609, 90, 16, "POSITION");
-		getContentPane().add(lblPos);
+		getContentPane().add(ComponentUtils.getJLabel(38, 609, 90, 16, "POSITION"));
 
 		JTextField txtPos = ComponentUtils.getJTextField(125, 609, 130, 26, 10);
 		getContentPane().add(txtPos);

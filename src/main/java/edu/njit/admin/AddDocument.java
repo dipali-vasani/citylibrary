@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 
 import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
@@ -28,8 +27,7 @@ public class AddDocument extends JDialog {
 		setBounds(100, 100, 500, 550);
 		getContentPane().setLayout(null);
 
-		JLabel lblAddReader = ComponentUtils.getJLabel(38, 14, 200, 31, "Add Document to Database");
-		getContentPane().add(lblAddReader);
+		getContentPane().add(ComponentUtils.getJLabel(38, 14, 200, 31, "Add Document to Database"));
 
 		JButton btnAddBook = ComponentUtils.getJButton(38, 64, 200, 29, "Add Book");
 		btnAddBook.addActionListener(new ActionListener() {

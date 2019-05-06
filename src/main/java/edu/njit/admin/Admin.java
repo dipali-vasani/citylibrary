@@ -7,7 +7,6 @@ import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 
 import edu.njit.components.ComponentUtils;
 import edu.njit.db.DBManager;
@@ -35,11 +34,9 @@ public class Admin extends JDialog {
 		setBounds(100, 100, 742, 500);
 		getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = ComponentUtils.getJLabel(202, 24, 181, 50, "The City Library");
-		getContentPane().add(lblNewLabel);
+		getContentPane().add(ComponentUtils.getJLabel(202, 24, 181, 50, "The City Library"));
 
-		JLabel lblAdminId = ComponentUtils.getJLabel(16, 6, 61, 16, "ADMIN");
-		getContentPane().add(lblAdminId);
+		getContentPane().add(ComponentUtils.getJLabel(16, 6, 61, 16, "ADMIN"));
 
 		JButton btnAddReader = ComponentUtils.getJButton(38, 64, 150, 29, "Add Reader");
 		btnAddReader.addActionListener(new ActionListener() {
