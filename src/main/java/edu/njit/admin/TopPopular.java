@@ -32,7 +32,7 @@ public class TopPopular extends JDialog {
 		ArrayList<ArrayList<Object>> result = new ArrayList<ArrayList<Object>>();
 
 		result = m.execQuery(
-				"SELECT `DOCID`, COUNT(*) FROM `BORROWS` WHERE YEAR(BDTIME) = 2016 GROUP BY DOCID ORDER BY COUNT(*) DESC LIMIT 10;");
+				"SELECT `DOCID`, COUNT(*) FROM `BORROWS` WHERE YEAR(BDTIME) = 2019 GROUP BY DOCID ORDER BY COUNT(*) DESC LIMIT 10;");
 
 		Object[][] array = new Object[result.size()][];
 		for (int i = 0; i < result.size(); i++) {
