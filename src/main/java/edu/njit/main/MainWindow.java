@@ -2,6 +2,7 @@ package edu.njit.main;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class MainWindow {
 		}
 
 		frameCityLibrary = new JFrame();
+		frameCityLibrary.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		frameCityLibrary.setTitle("THE CITY LIBRARY");
 		frameCityLibrary.getContentPane().setBackground(Color.WHITE);
 		frameCityLibrary.getContentPane().setForeground(Color.WHITE);
@@ -64,8 +66,9 @@ public class MainWindow {
 		frameCityLibrary.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameCityLibrary.getContentPane().setLayout(null);
 
-		JLabel lblCardNumber = new JLabel("Card Number");
+		JLabel lblCardNumber = new JLabel("Card No");
 		lblCardNumber.setBounds(38, 69, 90, 16);
+		lblCardNumber.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		frameCityLibrary.getContentPane().add(lblCardNumber);
 
 		cardNumber = new JTextField();
@@ -96,9 +99,10 @@ public class MainWindow {
 		frameCityLibrary.getContentPane().add(btnReaderLogin);
 
 		JLabel lblCityLibrary = new JLabel("Reader Functions");
+		lblCityLibrary.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		lblCityLibrary.setForeground(Color.BLACK);
 		lblCityLibrary.setBackground(Color.GRAY);
-		lblCityLibrary.setBounds(38, 36, 71, 16);
+		lblCityLibrary.setBounds(38, 36, 300, 16);
 		frameCityLibrary.getContentPane().add(lblCityLibrary);
 
 		JSeparator separator = new JSeparator();
@@ -106,13 +110,15 @@ public class MainWindow {
 		frameCityLibrary.getContentPane().add(separator);
 
 		JLabel lblCityLibrary1 = new JLabel("Administrative Functions");
+		lblCityLibrary1.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		lblCityLibrary1.setForeground(Color.BLACK);
 		lblCityLibrary1.setBackground(Color.GRAY);
-		lblCityLibrary1.setBounds(38, 151, 71, 16);
+		lblCityLibrary1.setBounds(38, 151, 300, 16);
 		frameCityLibrary.getContentPane().add(lblCityLibrary1);
 
 		JLabel lblAdminID = new JLabel("ID");
 		lblAdminID.setBounds(38, 179, 90, 16);
+		lblAdminID.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		frameCityLibrary.getContentPane().add(lblAdminID);
 
 		JTextField txtAdminID = new JTextField();
@@ -122,6 +128,7 @@ public class MainWindow {
 
 		JLabel lblAdminPwd = new JLabel("Password");
 		lblAdminPwd.setBounds(38, 217, 90, 16);
+		lblAdminPwd.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		frameCityLibrary.getContentPane().add(lblAdminPwd);
 
 		JTextField txtAdminPwd = new JTextField();

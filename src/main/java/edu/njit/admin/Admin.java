@@ -36,7 +36,7 @@ public class Admin extends JDialog {
 		getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("The City Library");
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		lblNewLabel.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setBounds(202, 24, 181, 50);
 		getContentPane().add(lblNewLabel);

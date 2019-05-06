@@ -37,7 +37,7 @@ public class Reader extends JDialog {
 		DBManager m = DBManager.getInstance();
 		m.connect();
 
-		setBounds(100, 100, 572, 329);
+		setBounds(100, 100, 780, 329);
 		getContentPane().setLayout(null);
 
 		txtDocSearch = new JTextField();
@@ -46,9 +46,9 @@ public class Reader extends JDialog {
 		txtDocSearch.setColumns(10);
 
 		JLabel lblNewLabel = new JLabel("The City Library");
-		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		lblNewLabel.setFont(new Font("Helvetica", Font.PLAIN, 16));
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setBounds(226, 30, 95, 50);
+		lblNewLabel.setBounds(226, 30, 150, 50);
 		getContentPane().add(lblNewLabel);
 
 		JLabel lblReadId = new JLabel("READER ID: " + cardNumber + "");
@@ -130,6 +130,10 @@ public class Reader extends JDialog {
 		btnNewButtonReturn.setBounds(428, 246, 114, 29);
 		getContentPane().add(btnNewButtonReturn);
 
+		JButton btnNewButtonFine = new JButton("Fine");
+		btnNewButtonFine.setBounds(579, 246, 114, 29);
+		getContentPane().add(btnNewButtonFine);
+
 		btnNewButtonReturn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Return dialog = new Return(cardNumber);
@@ -152,5 +156,12 @@ public class Reader extends JDialog {
 			}
 		});
 
+		btnNewButtonFine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DocumentFinePerReader dialog = new DocumentFinePerReader(cardNumber);
+				dialog.setModal(true);
+				dialog.setVisible(true);
+			}
+		});
 	}
 }

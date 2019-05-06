@@ -21,7 +21,7 @@ public class AverageFine extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
-	private JTable tableAvFn;
+	private JTable tableAverageFine;
 
 	/**
 	 * Create the dialog.
@@ -93,9 +93,9 @@ public class AverageFine extends JDialog {
 		scrollPane.setBounds(6, 51, 1308, 480);
 		contentPanel.add(scrollPane);
 
-		tableAvFn = new JTable();
-		scrollPane.setViewportView(tableAvFn);
-		tableAvFn.setModel(tm);
+		tableAverageFine = new JTable();
+		scrollPane.setViewportView(tableAverageFine);
+		tableAverageFine.setModel(tm);
 
 	}
 
