@@ -84,7 +84,7 @@ public class AddReader extends JDialog {
 
 				int afr = m.execUpdate("INSERT INTO READER (READERID, RTYPE, RNAME, ADDRESS) " + "VALUES ('" + id
 						+ "','" + txtReaderType.getText() + "','" + txtReaderName.getText() + "','"
-						+ txtReaderAdd.getText() + ",')");
+						+ txtReaderAdd.getText() + "')");
 				if (afr > 0) {
 					JOptionPane.showMessageDialog(null, "1 reader inserted to database");
 				}
