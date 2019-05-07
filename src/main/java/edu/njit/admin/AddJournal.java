@@ -121,7 +121,7 @@ public class AddJournal extends JDialog {
 
 				}
 				ArrayList<ArrayList<Object>> resulte = m
-						.execQuery("SELECT * FROM `CHIEF_EDITOR` WHERE EDITOR_ID = '" + txtEID.getText() + "';");
+						.execQuery("SELECT * FROM `CHIEF_EDITOR` WHERE EDITORID = '" + txtEID.getText() + "';");
 				if (resulte.size() == 0) {
 
 					JOptionPane.showMessageDialog(null, "No EDITOR  WITH THIS ID. CANNOT INSERT");
@@ -133,9 +133,9 @@ public class AddJournal extends JDialog {
 
 					m.execUpdate("INSERT INTO DOCUMENT (DOCID, TITLE, PDATE, PUBLISHERID) " + "VALUES ('" + id + "','"
 							+ txtTitle.getText() + "','" + txtPDate.getText() + "','" + pid + "')");
-					m.execUpdate("INSERT INTO JOURNAL_VOLUME (DOCID, JVOLUME, EDITOR_ID) " + "VALUES ('" + id + "','"
+					m.execUpdate("INSERT INTO JOURNAL_VOLUME (DOCID, JVOLUME, EDITORID) " + "VALUES ('" + id + "','"
 							+ txtVolume.getText() + "','" + eid + "')");
-					m.execUpdate("INSERT INTO JOURNAL_ISSUE (DOCID, ISSUE_NO, SCOPE) " + "VALUES ('" + id + "','"
+					m.execUpdate("INSERT INTO JOURNAL_ISSUE (DOCID, ISSUENO, SCOPE) " + "VALUES ('" + id + "','"
 							+ txtIssue.getText() + "','" + txtScope.getText() + "')");
 
 					JOptionPane.showMessageDialog(null, "New journal issue inserted.");
