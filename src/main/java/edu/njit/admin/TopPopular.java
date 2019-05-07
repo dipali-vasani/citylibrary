@@ -27,7 +27,7 @@ public class TopPopular extends JDialog {
 
 		DBManager m = DBManager.getInstance();
 
-		String[] columnNames = { "Top 10 Popular books of 2016" };
+		String[] columnNames = { "Top 10 Popular books of 2019" };
 		ArrayList<ArrayList<Object>> result = new ArrayList<ArrayList<Object>>();
 
 		result = m.execQuery(
